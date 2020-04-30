@@ -1,5 +1,5 @@
 export class Expr {
-  accept(visitor) {}
+  accept(visitor) { }
 }
 export class Binary extends Expr {
   constructor(left, operator, right) {
@@ -41,8 +41,8 @@ export class Unary extends Expr {
   }
 }
 export class Visitor {
-  visitBinaryExpr(expr) {}
-  visitGroupingExpr(expr) {}
-  visitLiteralExpr(expr) {}
-  visitUnaryExpr(expr) {}
+  visitBinaryExpr(expr) { }
+  visitGroupingExpr(expr) { }
+  visitLiteralExpr(expr) { }
+  visitUnaryExpr(expr) { }
 }
