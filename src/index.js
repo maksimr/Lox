@@ -1,4 +1,4 @@
-import { Scanner } from "./Scanner";
+import {Scanner} from "./Scanner";
 
 class Lox {
   static error(line, message) {

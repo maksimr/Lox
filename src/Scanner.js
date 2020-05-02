@@ -1,6 +1,10 @@
-import { Token, TokenType, keywords } from "./Token";
+import {Token, TokenType, keywords} from "./Token";
 
 export class Scanner {
+  static error(line, message) {
+    console.error(line, "", message);
+  }
+
   /**
    * @param {String} source
    */
@@ -97,7 +101,7 @@ export class Scanner {
         } else if (this.isAlpha(c)) {
           this.identifier();
         } else {
-          Lox.error(this.line, "Unexpected character.");
+          Scanner.error(this.line, "Unexpected character.");
         }
         break;
     }
@@ -163,7 +167,7 @@ export class Scanner {
 
     // Unterminated string.
     if (this.isAtEnd()) {
-      Lox.error(this.line, "Unterminated string.");
+      Scanner.error(this.line, "Unterminated string.");
       return;
     }
 
@@ -185,6 +189,6 @@ export class Scanner {
 
   addToken(type, literal = null) {
     const text = this.source.substr(this.start, this.current);
-    this.tokens.add(new Token(type, text, literal, this.line));
+    this.tokens.push(new Token(type, text, literal, this.line));
   }
 }
