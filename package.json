@@ -6,6 +6,7 @@
   "scripts": {
     "start": "parcel index.html --open",
     "build": "parcel build index.html",
+    "generate": "node ./lib/GenerateAst.js",
     "test": "node --es-module-specifier-resolution=node --experimental-modules ./src/index.js"
   },
   "dependencies": {},
