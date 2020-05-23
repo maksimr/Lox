@@ -1,6 +1,7 @@
 {
   "name": "lox",
   "version": "1.0.0",
+  "type": "module",
   "description": "Lox language implementation",
   "main": "index.html",
   "scripts": {
